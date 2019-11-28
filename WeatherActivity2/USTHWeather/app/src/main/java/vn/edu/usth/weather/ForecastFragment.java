@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class ForecastFragment extends Fragment {
+public class Forecastfragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -20,19 +20,17 @@ public class ForecastFragment extends Fragment {
         //
 
 
-        View view = inflater.inflate(R.layout.forecastfragment, container,false);
-        TextView textview = new TextView(getContext());
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.Linearlayout);
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        textview.setText("wednesday");
-        ImageView imageview = new ImageView(getContext());
-        imageview.setMaxHeight(250);
-        imageview.setMaxWidth(250);
-        imageview.setBackgroundResource(R.drawable.sunny);
+        View view = inflater.inflate(R.layout.forecastfragment, container, false);
+        // TextView textview = new TextView(getContext());
+        // LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.Linearlayout);
+        // linearLayout.setOrientation(LinearLayout.VERTICAL);
+        // textview.setText("wednesday");
+        // ImageView imageview = new ImageView(getContext());
+        //imageview.setMaxHeight(250);
+        //imageview.setMaxWidth(250);
+        //imageview.setBackgroundResource(R.drawable.sunny);
 
         return view;
     }
 
-    private class Linearlayout1 {
-    }
 }

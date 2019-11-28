@@ -25,4 +25,6 @@
     <string name= "Sun">Sun</string>
     <string name="PartlyCloudy">Partly Cloudy \n 19C-25C</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="weather">12C\nCloudy</string>
+    <string name="location">Paris</string>
 </resources>

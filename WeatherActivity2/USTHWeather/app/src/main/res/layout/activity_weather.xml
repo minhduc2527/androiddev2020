@@ -4,5 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container">
+    tools:context=".WeatherActivity">
+
+
+    <fragment
+        android:name="vn.edu.usth.weather.Forecastfragment"
+        class="vn.edu.usth.weather.Forecastfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="0dp" />
+
+    <fragment
+        android:name="vn.edu.usth.weather.Forecastfragment"
+        class="vn.edu.usth.weather.Forecastfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
