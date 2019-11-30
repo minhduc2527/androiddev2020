@@ -4,13 +4,18 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class WeatherActivity extends AppCompatActivity {
-
+    private ViewPager viewPager;
+    private Adapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        adapter = new Adapter(getSupportFragmentManager());
+        viewPager = findViewById(R.id.pager);
+        viewPager.setAdapter(adapter);
         Forecastfragment firstFragment =new Forecastfragment();
         Forecastfragment x = new Forecastfragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment).commit();
