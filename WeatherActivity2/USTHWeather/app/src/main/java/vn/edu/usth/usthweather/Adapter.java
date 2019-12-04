@@ -1,6 +1,5 @@
 package vn.edu.usth.usthweather;
 
-
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,16 +10,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 
-
 public class Adapter extends FragmentPagerAdapter {
     private Resources resources;
     private final int PAGE_COUNT = 3;
     private String titles[] = null;
 //     new String[] { "Hanoi", "Paris", "Toulouse" }
-
-
-
-
     public Adapter(FragmentManager fm, Resources resources) {
         super(fm);
         this.resources = resources;
