@@ -1,57 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/white"
+    tools:context=".ForecastFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/fragment_container"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".ForecastFragment">
-
-        <ScrollView
+        >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/scroll_view_container"
-                />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/scroll_view_container"
+            />
 
-        </ScrollView>
+    </ScrollView>
 </LinearLayout>
-
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--xmlns:tools="http://schemas.android.com/tools"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--android:orientation="vertical" >-->
-<!--<FrameLayout-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--android:background="#00AC9D"-->
-<!--tools:context=".ForecastFragment">-->
-
-<!--&lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-
-<!--<TextView-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:layout_marginTop="10dp"-->
-<!--    android:text="@string/thursday"-->
-<!--    android:textSize="40sp" />-->
-
-<!--<ImageView-->
-<!--    android:id="@+id/imageView"-->
-<!--    android:layout_width="149dp"-->
-<!--    android:layout_height="195dp"-->
-<!--    android:layout_marginStart="150dp"-->
-<!--    android:contentDescription="@string/weather_image_description"-->
-<!--    android:src="@drawable/clear" />-->
-
-<!--</FrameLayout>-->
-<!--    </LinearLayout>-->
