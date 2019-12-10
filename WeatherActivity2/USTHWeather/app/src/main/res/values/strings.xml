@@ -2,33 +2,34 @@
     <string name="app_name">USTH Weather</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
-    <string name="current_weather">12C \n Cloudy vi</string>
-    <!--    <string name="current_location">Paris </string>-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="current_weather">12C \n Cloudy</string>
+    <string name="current_location">Paris</string>
 
     <string name="weather_image_description">Weather Icon</string>
+    <string name="refresh">Refresh</string>
     <string-array name="days">
-        <item name="monday">Thứ 2</item>
-        <item name="tuesday">Thứ 3</item>
-        <item name="wednesday">Thứ 4</item>
-        <item name="thursday">Thứ 5</item>
-        <item name="friday">Thứ 6</item>
-        <item name="saturday">Thứ 7</item>
-        <item name="sunday">Chủ nhật</item>
+        <item name="monday">Mon</item>
+        <item name="tuesday">Tue</item>
+        <item name="wednesday">Wed</item>
+        <item name="thursday">Thu</item>
+        <item name="friday">Fri</item>
+        <item name="saturday">Sat</item>
+        <item name="sunday">Sun</item>
     </string-array>
     <string-array name="weather_description">
-        <item name="scattered_thuderstorms">Scattered ThunderStorms vi \n 24C - 28C</item>
-        <item name="showers">Showers vi \n 24C - 37C</item>
-        <item name="Rain">Rain vi \n 22C - 23C</item>
-        <item name="scattered_showers">Scattered Showers vi \n 22C - 27C</item>
-        <item name="mostly_cloudy">Nhiều mây\n 22C - 30C</item>
-        <item name="partly_cloudy">Ít mây vi \n 24C - 31C</item>
-        <item name="thunderstorms">ZEUS đang đến vi \n 25C - 28C</item>
+        <item name="scattered_thuderstorms">Scattered ThunderStorms \n 24C - 28C</item>
+        <item name="showers">Showers \n 24C - 37C</item>
+        <item name="Rain">Rain \n 22C - 23C</item>
+        <item name="scattered_showers">Scattered Showers \n 22C - 27C</item>
+        <item name="mostly_cloudy">Mostly Cloudy \n 22C - 30C</item>
+        <item name="partly_cloudy">Partly Cloudy \n 24C - 31C</item>
+        <item name="thunderstorms">ThunderStorms \n 25C - 28C</item>
     </string-array>
     <string-array name="locations">
-        <item name="hanoi">Hanoi vi</item>
-        <item name="paris">Paris vi</item>
-        <item name="toulouse">Toulouse vi</item>
+        <item name="hanoi">Hanoi</item>
+        <item name="paris">Paris</item>
+        <item name="toulouse">Toulouse</item>
     </string-array>
 
 </resources>

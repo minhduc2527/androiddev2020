@@ -6,9 +6,13 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.viewpager.widget.ViewPager;
 
@@ -25,6 +29,7 @@ public class WeatherActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private Adapter adapter;
     private TabLayout tabLayout;
+    private Toolbar myToolbar;
 
     private static final int REQUEST_ID_READ_PERMISSION = 100;
     private static final int REQUEST_ID_WRITE_PERMISSION = 200;
@@ -45,8 +50,9 @@ public class WeatherActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         // Music
-        askPermissionAndWriteFile();    // save music to external storage from res
-        askPermissionAndReadFile();     // play music from external storage
+//        askPermissionAndWriteFile();    // save music to external storage from res
+//        askPermissionAndReadFile();     // play music from external storage
+
 
     }
 
@@ -135,6 +141,24 @@ public class WeatherActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_weather, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.settings:
+                Toast.makeText(getApplicationContext(), "Starting a PrefActivity", Toast.LENGTH_LONG).show();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
     protected void onStart() {
