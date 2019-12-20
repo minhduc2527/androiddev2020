@@ -8,9 +8,6 @@
     android:orientation="vertical"
     android:background="@color/skyblue"
     tools:context=".WeatherActivity">
-
-
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"
         android:name="vn.edu.usth.weather.WeatherAndForecastFragment"
@@ -22,7 +19,6 @@
             android:layout_height="wrap_content"
             app:tabIndicatorColor="@color/colorPrimary"/>
     </androidx.viewpager.widget.ViewPager>
-
 
 
 

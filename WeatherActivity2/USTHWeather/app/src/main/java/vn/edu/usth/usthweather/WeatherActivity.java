@@ -2,14 +2,9 @@ package vn.edu.usth.usthweather;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +22,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-//org.apache.commons.io.IOUtils;
 
 
 public class WeatherActivity extends AppCompatActivity {
@@ -49,6 +43,7 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.weather_activity);
         Log.i("onCreate()", "onCreate() method is active");
 
+
         adapter = new Adapter(getSupportFragmentManager(), getResources());
         viewPager = findViewById(R.id.pager);
         viewPager.setOffscreenPageLimit(3);
@@ -60,77 +55,10 @@ public class WeatherActivity extends AppCompatActivity {
 //        askPermissionAndWriteFile();    // save music to external storage from res
 //        askPermissionAndReadFile();     // play music from external storage
 
-        new GetReqeust().execute("http://ict.usth.edu.vn/wp-content/uploads/usth/usthlogo.png");
+//        new GetRequest().execute("http://ict.usth.edu.vn/wp-content/uploads/usth/usthlogo.png");
 
     }
 
-    private class GetReqeust extends AsyncTask<String, Void, Bitmap> {
-        private String content;
-        @Override
-        protected void onPreExecute() {
-            Log.i("Async-Example", "onPreExecute Called");
-            // do some preparation here, if needed
-
-        }
-
-        @Override
-        protected Bitmap doInBackground(String... param) {
-            final String url = param[0];
-
-            // This is where the worker thread's code is executed
-            // params are passed from the execute() method call
-            final Handler handler = new Handler(Looper.getMainLooper()) {
-                @Override
-                public void handleMessage(Message msg) {
-                    // This method is executed in main thread
-                    content = msg.getData().getString("server_response");
-                    Toast.makeText(getApplicationContext(), content, Toast.LENGTH_LONG).show();
-                }
-            };
-            Thread t = new Thread(new Runnable() {
-                @Override
-                public void run() {
-
-                    // this method is run in a worker thread
-                    try {
-                        // wait for 5 seconds to simulate a long network access
-                        Thread.sleep(5000);
-                    }
-                    catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    // Assume that we got our data from server
-                    Bundle bundle = new Bundle();
-                    bundle.putString("server_response", "some sample json here"+ url);
-                    // notify main thread
-                    Message msg = new Message();
-                    msg.setData(bundle);
-                    handler.sendMessage(msg);
-                }
-            });
-            t.start();
-            return null;
-        }
-
-
-
-        @Override
-        protected void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-            // This method is called in the main thread, so it's possible
-            // to update UI to reflect the worker thread progress here.
-            // In a network access task, this should update a progress bar
-            // to reflect how many percent of data has been retrieved
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap result) {
-            Log.i("Async-Example", "onPostExecute Called");
-
-        }
-
-
-    }
 
 
     private void askPermissionAndWriteFile() {
@@ -228,11 +156,11 @@ public class WeatherActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.refresh:
                 Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_LONG).show();
-                new GetReqeust().execute("http://ict.usth.edu.vn/wp-content/uploads/usth/usthlogo.png");
 
                 return true;
             case R.id.settings:
                 Toast.makeText(getApplicationContext(), "Starting a PrefActivity", Toast.LENGTH_LONG).show();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
